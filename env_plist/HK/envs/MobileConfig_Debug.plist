@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>xapi</key>
+    <dict>
+        <key>host</key>
+        <string>xapi value</string>
+    </dict>
+  <key>tealium</key>
+    <dict>
+        <key>environment</key>
+        <string>qa</string>
+    </dict>
+</dict>
+</plist>
