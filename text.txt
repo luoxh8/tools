@@ -1,0 +1,29 @@
+帮我写一份excel生成的python脚本，要求解析下面的json文件，遍历sheet_name去创建对应的sheet，遍历data里面的obj，然后匹配obj的belong属性，如果belong 匹配 sheet则将对应的obj放在sheet中，如果不对应则放在others中。
+{
+  "sheet_name": [
+    "Myworkspace",
+    "SFE"
+  ],
+  "data": [
+    {
+      "belong": "SFE-APAC",
+      "CRNumber": "CR001"
+    },
+    {
+      "belong": "SFE-LCC",
+      "CRNumber": "CR001"
+    },
+    {
+      "belong": "HFE2",
+      "CRNumber": "CR001"
+    },
+    {
+      "belong": "AO",
+      "CRNumber": "CR001"
+    },
+    {
+      "belong": "Myworkspace-DAK",
+      "CRNumber": "CR001"
+    }
+  ]
+}
