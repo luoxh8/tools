@@ -1,6 +1,6 @@
 import os
-import time
 import platform
+import time
 
 
 def move_and_click_windows():

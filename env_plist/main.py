@@ -1,7 +1,6 @@
 import os
-from shutil import copyfile
-
 import plistlib
+from shutil import copyfile
 
 current_path = os.path.dirname(os.path.abspath(__file__))
 
