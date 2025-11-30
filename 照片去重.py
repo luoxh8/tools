@@ -1,11 +1,13 @@
 import hashlib
 import os
 import shutil
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+
 import exifread
-from PIL import Image
 import filetype
+from PIL import Image
+
 
 def calculate_md5(file_path):
     """计算文件MD5哈希值（优化大文件处理）[6,7](@ref)"""
@@ -14,6 +16,7 @@ def calculate_md5(file_path):
         for chunk in iter(lambda: f.read(4096), b""):
             hash_md5.update(chunk)
     return hash_md5.hexdigest()
+
 
 def get_media_date(file_path):
     """获取媒体文件拍摄日期（增强兼容性）[3](@ref)"""
@@ -51,6 +54,7 @@ def get_media_date(file_path):
     except Exception:
         return datetime.fromtimestamp(os.path.getmtime(file_path))
 
+
 def dedup_and_organize_multi(source_dirs, target_dir):
     """
     多目录去重整理核心功能[1,3](@ref)
@@ -61,7 +65,8 @@ def dedup_and_organize_multi(source_dirs, target_dir):
     os.makedirs(target_dir, exist_ok=True)
     processed_count = 0
     error_count = 0
-    media_extensions = {'.jpg', '.jpeg', '.png', '.heic', '.mov', '.mp4', '.avi', '.bmp', '.tiff', '.webp', '.mkv', '.3gp'}
+    media_extensions = {'.jpg', '.jpeg', '.png', '.heic', '.mov', '.mp4', '.avi', '.bmp', '.tiff', '.webp', '.mkv',
+                        '.3gp'}
 
     for source_dir in source_dirs:  # 遍历每个源目录[3](@ref)
         source_path = Path(source_dir)
@@ -98,6 +103,7 @@ def dedup_and_organize_multi(source_dirs, target_dir):
                     print(f"错误处理 {file_path}: {e}")
 
     print(f"整理完成！成功处理 {processed_count} 个文件，{error_count} 个错误。")
+
 
 if __name__ == "__main__":
     source_folders = [  # 支持多个源目录[3](@ref)

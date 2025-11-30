@@ -8,5 +8,6 @@ print(f"总文件数：{file_count}")
 
 # 或者使用pathlib的单行版本
 from pathlib import Path
+
 file_count = len(list(Path(target_dir).rglob('*')))
 print(f"总文件数：{file_count}")
